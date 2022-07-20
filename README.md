@@ -1,0 +1,1 @@
+This Etch-a-Sketch project will use JavaScript to generate a grid of squares. When a mouse hovers over a square, the square will change colors. The user will be able to input a number from 0 to 100 that will determine the number of squares along the length and width and JS will fill in the middle. 
