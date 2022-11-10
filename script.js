@@ -9,20 +9,20 @@ const container = document.getElementById('container');
 //a loop for dersired number of times
 
 
+//NOT YET IN USE: when the user clicks, a grid is created
 //Create a variable to be used when identifying if the user clicks anywhere on the page
 const canvas = document.querySelector('body'); 
-
-//NOT YET IN USE: when the user clicks, a grid is created
 //canvas.addEventListener('click', createGrid());
 
 
-//NOT YET IN USE
-function createGrid(){
-    //call createColumn
-    //for (let i= 6; i>0; i--){
-    //    createColumn();
-   // }
-};
+let column = document.createElement('div');
+let box = document.createElement('div');
+/*11/9/22 4:22pm
+Problem: Part of the reason why all new boxes are appended in the same column
+is because there is only one column div that has been created.
+
+Solution: dynamically create a new column in the DOM once the loop to create a box(s)
+has finished. Then tell the DOM to add boxes to the newly created column
 
 
 /*11/9/22 3:56pm
@@ -35,12 +35,12 @@ by creating a new row or appending the new box under the previous.
 
 Next step: Create multiple columns
 */
-let column = document.createElement('div');
 function createColumn(){
     //loop through to build node divs with column CSS class
     //call createBox
     
-    for (let i = 6; i>0; i--){
+    for (let i = 5; i>0; i--){
+        column = document.createElement('div');
         column.classList.add('column');
         container.appendChild(column);
         createBox();
@@ -48,26 +48,31 @@ function createColumn(){
 };
 
 function createBox(){
-    //loop through to build node divs with box CSS class
-    let box = document.createElement('div');
-    for (let i = 6; i>0; i--){
+    //loop through to build node divs with box CSS class    
+
+
+        for (let i = 6; i>0; i--){
+        box = document.createElement('div');
         box.classList.add('box');
         box.textContent = 'test';
         column.appendChild(box);
-    }
+        }
+    
 };
 
 createColumn();
-//createGrid();
+
+
+
+
+
+
 
 
 /*
 //event listener to prompt loop that will create a row
 //once the row is created, loop through to make the columns
 */
-
-
-
 
 //BELOW: This creates squares in a grid where each box and each column need to be 
 //declared manually
