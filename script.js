@@ -1,5 +1,8 @@
 const container = document.getElementById('container');
 
+let column = document.createElement('div');
+let box = document.createElement('div');
+
 //First, Create a 16x16 grid of square divs using DOMs
 
 //TO FIX: appending box mulitiple times results in only the
@@ -12,11 +15,9 @@ const container = document.getElementById('container');
 //NOT YET IN USE: when the user clicks, a grid is created
 //Create a variable to be used when identifying if the user clicks anywhere on the page
 const canvas = document.querySelector('body'); 
-//canvas.addEventListener('click', createGrid());
+//canvas.addEventListener('click', createColumn());
 
 
-let column = document.createElement('div');
-let box = document.createElement('div');
 /*11/9/22 4:22pm
 Problem: Part of the reason why all new boxes are appended in the same column
 is because there is only one column div that has been created.
@@ -39,7 +40,7 @@ function createColumn(){
     //loop through to build node divs with column CSS class
     //call createBox
     
-    for (let i = 5; i>0; i--){
+    for (let i = 20; i>0; i--){
         column = document.createElement('div');
         column.classList.add('column');
         container.appendChild(column);
@@ -51,10 +52,10 @@ function createBox(){
     //loop through to build node divs with box CSS class    
 
 
-        for (let i = 6; i>0; i--){
+        for (let i = 20; i>0; i--){
         box = document.createElement('div');
         box.classList.add('box');
-        box.textContent = 'test';
+        box.textContent = '';
         column.appendChild(box);
         }
     
