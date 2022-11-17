@@ -1,4 +1,4 @@
-#container{
+#gridContainer{
     display: flex;
     flex-flow: row wrap;
     padding: 0px;
