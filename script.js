@@ -36,11 +36,20 @@ by creating a new row or appending the new box under the previous.
 
 Next step: Create multiple columns
 */
+
+/**
+ * createColumn and createBox functions are used to access the DOM to 
+ * add div nodes resulting in a grid of empty div nodes being created.
+ * CreateColumn creates a child div node inside of container with a column
+ * flex-flow. That column div will then be the parent of a box div node.
+ * When a new column is created, it will be fill with box div nodes according
+ * to the loop. This will repeat until the column loop is completed.
+ */
 function createColumn(){
     //loop through to build node divs with column CSS class
     //call createBox
     
-    for (let i = 20; i>0; i--){
+    for (let i = 10; i>0; i--){
         column = document.createElement('div');
         column.classList.add('column');
         container.appendChild(column);
@@ -52,7 +61,7 @@ function createBox(){
     //loop through to build node divs with box CSS class    
 
 
-        for (let i = 20; i>0; i--){
+        for (let i = 10; i>0; i--){
         box = document.createElement('div');
         box.classList.add('box');
         box.textContent = '';

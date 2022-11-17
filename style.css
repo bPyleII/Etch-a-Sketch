@@ -5,18 +5,19 @@
     margin-top: 0px;
     justify-content: center;
     Height: 600px;
-    min-height: 400px;
-    max-height: 1400px;
-    Width: 600px;
-    min-width: 400px;
-    max-width: 1400px;
     
-    /*border: 4px solid rgb(249, 4, 4);*/
+    Width: 600px;
+    
+    
+    border: 4px solid rgb(249, 4, 4);
     
     
 }
 
 .column {
+    /*Style the div so that it's a flexbox with a column main access.
+    Set the flex to auto so that the div takes up all available space
+    on the main axis (the column in this case)*/
     display: flex; 
     flex-flow: column;
     flex: auto;
@@ -29,7 +30,9 @@
 
 .box {
     /*Adjust the height style to evenly fill full height of the column*/
-    border: 1px solid black;
+    /*Set the flex to auto so that the flex items take up all available space
+    on the main axis (the row in this case)*/
     flex: auto;
+    border: 1px solid black;
     
 }
