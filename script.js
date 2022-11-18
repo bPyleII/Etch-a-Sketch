@@ -21,7 +21,7 @@ function createColumn(){
     //loop through to build node divs with column CSS class
     //call createBox
     
-    for (let i = 3; i>0; i--){
+    for (let i = 16; i>0; i--){
         column = document.createElement('div');
         column.classList.add('column');
         gridContainer.appendChild(column);
@@ -32,7 +32,7 @@ function createColumn(){
 function createBox(){
     //loop through to build node divs with box CSS class    
 
-        for (let i = 3; i>0; i--){
+        for (let i = 16; i>0; i--){
         box = document.createElement('div');
         box.classList.add('box');
         box.textContent = '';
@@ -45,11 +45,14 @@ function createBox(){
 createColumn();
 
 
-
+/**
+ * Listen for when the mouse is hovering over a div in the container.
+ * Target that event and add a class list of color to change the backgroud
+ * color of the div.
+ */
 gridContainer.addEventListener('mouseover', function (e) {
     console.log(e.target);
     e.target.classList.add('color');
-    //column.classList.add('color');
     
 });
 
