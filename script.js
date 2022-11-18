@@ -3,6 +3,42 @@ let column = document.createElement('div');
 let box = document.createElement('div');
 const btn = document.getElementById('size');
 
+//Default size of the grid
+let gridNumber = 16;
+
+/**
+ * gridSize functions changes the grid size based on the users input from the prompt.
+ * The users input is being stored in gridNumber. If the users input is an integer
+ * between 0 and 100, then the children of gridContainer will be removed and 
+ * the grid will be recreated with the new gridNumber. 
+ * 
+ */
+
+//listens for when the button with the id of size is clicked
+ btn.addEventListener('click', gridSize);
+
+function gridSize(){
+    gridNumber = prompt('Please enter a number from 0 to 100.');
+
+    //Checks for valid input. Desired input is an integer between 0 and 100 inclusive
+    if (gridNumber < 0 || gridNumber > 100){
+        alert('Your number is not between 0 and 100.')
+    } else if(gridNumber % 1 != 0){
+        alert('Your number is not an integer.')
+    } else if (gridNumber == null){
+        alert('Please enter a Number')
+    }else{
+        //if number is valid, then clear the current grid layout
+        while(gridContainer.hasChildNodes()){
+            gridContainer.removeChild(gridContainer.firstChild);
+        }
+        //build a new grid with the new gridNumber
+        createColumn();
+    }
+    
+}
+
+
 
 /**
  * createColumn and createBox functions are used to access the DOM to 
@@ -16,7 +52,7 @@ function createColumn(){
     //loop through to build node divs with column CSS class
     //call createBox
     
-    for (let i = 64; i>0; i--){
+    for (let i = gridNumber; i>0; i--){
         column = document.createElement('div');
         column.classList.add('column');
         gridContainer.appendChild(column);
@@ -27,17 +63,15 @@ function createColumn(){
 function createBox(){
     //loop through to build node divs with box CSS class    
 
-        for (let i = 64; i>0; i--){
+        for (let i = gridNumber; i>0; i--){
         box = document.createElement('div');
         box.classList.add('box');
         box.textContent = '';
         column.appendChild(box);
-        
+        console.log(gridNumber);
         }
     
 };
-
-createColumn();
 
 
 /**
@@ -51,12 +85,8 @@ gridContainer.addEventListener('mouseover', function (e) {
 });
 
 
+createColumn();
 
-function gridSize(){
-    console.log('Clicked!');
-}
-
-btn.addEventListener('click', gridSize);
 
 
 
