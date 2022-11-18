@@ -28,3 +28,26 @@
 .color {
     background-color: black;
 }
+
+#title,
+#rules{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    Padding: 10px;
+}
+
+#title{
+    font-size: 38px;
+    
+}
+
+#rules{
+    font-size: 26px;
+}
+
+li{
+    padding: 8px;
+}
+
+body{
+    background: linear-gradient(to bottom, #33ccff 0%, #ff5050 100%);
+}
