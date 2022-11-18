@@ -1,12 +1,7 @@
 const gridContainer = document.getElementById('gridContainer');
-
 let column = document.createElement('div');
 let box = document.createElement('div');
-
-//NOT YET IN USE: when the user clicks, a grid is created
-//Create a variable to be used when identifying if the user clicks anywhere on the page
-const canvas = document.querySelector('body'); 
-//canvas.addEventListener('click', createColumn());
+const btn = document.getElementById('size');
 
 
 /**
@@ -21,7 +16,7 @@ function createColumn(){
     //loop through to build node divs with column CSS class
     //call createBox
     
-    for (let i = 16; i>0; i--){
+    for (let i = 64; i>0; i--){
         column = document.createElement('div');
         column.classList.add('column');
         gridContainer.appendChild(column);
@@ -32,7 +27,7 @@ function createColumn(){
 function createBox(){
     //loop through to build node divs with box CSS class    
 
-        for (let i = 16; i>0; i--){
+        for (let i = 64; i>0; i--){
         box = document.createElement('div');
         box.classList.add('box');
         box.textContent = '';
@@ -51,10 +46,17 @@ createColumn();
  * color of the div.
  */
 gridContainer.addEventListener('mouseover', function (e) {
-    console.log(e.target);
     e.target.classList.add('color');
     
 });
+
+
+
+function gridSize(){
+    console.log('Clicked!');
+}
+
+btn.addEventListener('click', gridSize);
 
 
 
