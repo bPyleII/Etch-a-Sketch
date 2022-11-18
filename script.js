@@ -1,7 +1,8 @@
 const gridContainer = document.getElementById('gridContainer');
 let column = document.createElement('div');
 let box = document.createElement('div');
-const btn = document.getElementById('size');
+const sizeBtn = document.getElementById('size');
+const resetBtn = document.getElementById('reset');
 
 //Default size of the grid
 let gridNumber = 16;
@@ -15,7 +16,7 @@ let gridNumber = 16;
  */
 
 //listens for when the button with the id of size is clicked
- btn.addEventListener('click', gridSize);
+ sizeBtn.addEventListener('click', gridSize);
 
 function gridSize(){
     gridNumber = prompt('Please enter a number from 0 to 100.');
@@ -37,8 +38,6 @@ function gridSize(){
     }
     
 }
-
-
 
 /**
  * createColumn and createBox functions are used to access the DOM to 
@@ -84,6 +83,17 @@ gridContainer.addEventListener('mouseover', function (e) {
     
 });
 
+//listens for when the button with the id of reset is clicked
+resetBtn.addEventListener('click', reset);
+
+//finds any node with the .color class and then removes the class
+function reset(){
+    const elements = document.querySelectorAll('.color')
+
+    elements.forEach((elements) => {
+        elements.classList.remove('color');
+    });
+};
 
 createColumn();
 
