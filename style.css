@@ -18,7 +18,6 @@
 }
 
 .box {
-    /*Adjust the height style to evenly fill full height of the column*/
     /*Set the flex to auto so that the flex items take up all available space
     on the main axis (the row in this case)*/
     flex: auto;
@@ -50,4 +49,22 @@ li{
 
 body{
     background: linear-gradient(to bottom, #33ccff 0%, #ff5050 100%);
+}
+
+/*Styling for buttons*/
+#size,
+#reset{
+    background-color: aliceblue;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
+    transition: ease-out 0.3s;
+}
+
+/*buttons fill with color when pointer hovers*/
+#size:hover,
+#reset:hover{
+    box-shadow: inset 200px 0 0 0 #33ccff;
 }
